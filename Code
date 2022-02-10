@@ -18,3 +18,9 @@ else:
     j = x - group_count
 
 print(f"{i}/{j}")
+
+
+# 개쩌는 숏코딩...
+# x = int(input());a=0
+# while x>0:a+=1;x-=a
+# print("%d/%d"%(1-x, a+x)[::a%2*2-1])

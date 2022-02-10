@@ -1,0 +1,20 @@
+x = int(input())
+
+group = 0              #그룹 개수
+group_count = 0        #그룹 원소의 개수
+
+while group_count < x:
+    group += 1              
+    group_count += group    
+
+group_count -= group   #x가 속하는 그룹 바로 전 그룹까지의 원소개수의 총합
+                       #따라서 여기 group_count의 값은 무조건 1,3,6,10,15... 등이다.
+
+if group % 2 == 0:                      #짝수그룹의 분자는 오름차순, 분모는 내림차순
+    i = x - group_count
+    j = group - i + 1
+else:
+    i = group - (x - group_count) + 1   #홀수그룹의 분자는 내림차순, 분모는 오름차순
+    j = x - group_count
+
+print(f"{i}/{j}")

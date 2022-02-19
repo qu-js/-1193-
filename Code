@@ -63,3 +63,64 @@ print(num_list.index(max(num_list)) + 1)
 
 
 # ------------------------------------------------------------------------------------------
+
+
+#baekjoon 2798번
+
+
+N, M = map(int, input().split())
+array = list(map(int, input().split()))
+
+result = 0         # 0으로 초기화 시켜주지 않으면 런타임 에러를 일으키니 주의
+sum= 0
+
+for i in range(N-2):                   # N-2, N-1로 해주지 않으면 쓸데없이 더 계산하기 때문에 해주는 것이 좋음.                              
+    for j in range(i+1,N-1):           # 그러나 오류는 발생하지 않음            
+        for k in range(j+1,N):
+            sum = array[i] + array[j] + array[k]
+            if(sum > M):
+               continue
+            else:
+                result = max(result, sum )   
+
+print(result)
+
+
+
+
+
+
+# C언어 코딩
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+	int N, M;
+	int sum = 0;
+	int result = 0;
+	int Card_list[100] = { 0 };
+	scanf("%d %d", &N, &M);
+
+	for (int i = 0; i < N; i++)
+		scanf("%d", &Card_list[i]);
+
+	for (int i = 0; i < N - 2; i++) {
+		for (int j = i + 1; j < N - 1; j++) {
+			for (int k = j + 1; k < N; k++) {
+				sum = Card_list[i] + Card_list[j] + Card_list[k];
+				if (sum > result && sum <= M)
+					result = sum;
+			}
+		}
+	}
+
+	printf("%d\n", result);
+
+	return 0;
+}
+
+
+# ------------------------------------------------------------------------------------------

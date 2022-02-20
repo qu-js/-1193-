@@ -124,3 +124,107 @@ int main(void)
 
 
 # ------------------------------------------------------------------------------------------
+
+
+#baekjoon 2675번 
+
+
+
+T = int(input())
+
+for _ in range(T):
+    R, S = input().split()
+    R = int(R)
+    S = str(S)
+    for x in S:
+        print(x*R, end="")
+    print()
+ 
+ 
+ 
+ 
+ 
+T = int(input())                  #새로운 풀이
+    
+for _ in range(T):
+    R, S = input().split()
+    text = ''
+    for i in S:
+       text += int(R)*i
+    print(text)
+
+
+
+
+
+
+
+
+# C언어 코딩
+
+
+
+#include <stdio.h>                         # 삼중 반복문을 피하는 방식
+#include <string.h>
+
+void print(char a[], int b)
+{ 
+	int i, j;
+	
+	for(i = 0; i < strlen(a); i++)
+		for(j = 0; j < b; j++)
+			printf("%c", a[i]);
+	printf("\n");
+}
+
+
+int main(void) 
+{
+	int i, j, n;
+	char p[21];
+
+	scanf("%d", &n);
+
+	for(i = 0; i < n; i++){
+		scanf("%d", &j);
+		scanf("%s", p);
+		print(p, j);
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS             # 삼중반복문 이용하는 방식
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	int T, R;
+	char S[21];
+
+	scanf("%d", &T);
+
+	while (T--) {
+		scanf("%d %s", &R, S);
+
+		for (int i = 0; i < strlen(S); i++) {
+			for (int j = 0; j < R; j++)
+				printf("%c", S[i]);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+
+#------------------------------------------------------------------------------------

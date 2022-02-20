@@ -164,7 +164,7 @@ for _ in range(T):
 
 
 
-#include <stdio.h>                         # 삼중 반복문을 피하는 방식
+#include <stdio.h>                           # 3중 반복문을 피하는 방식          
 #include <string.h>
 
 void print(char a[], int b)
@@ -180,20 +180,19 @@ void print(char a[], int b)
 
 int main(void) 
 {
-	int i, j, n;
-	char p[21];
+	int  R, T;
+	char S[21];
 
-	scanf("%d", &n);
+	scanf("%d", &T);
 
-	for(i = 0; i < n; i++){
-		scanf("%d", &j);
-		scanf("%s", p);
-		print(p, j);
+	for(int i = 0; i < T; i++){
+		scanf("%d", &R);
+		scanf("%s", S);
+		print(S, R);
 	}
 
 	return 0;
 }
-
 
 
 

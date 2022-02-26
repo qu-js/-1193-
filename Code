@@ -305,3 +305,26 @@ for i in alphabet_list:
 
 
 # ------------------------------------------------------------------------------------------
+
+
+# baekjoon 4673번: 셀프 넘버
+
+
+
+ numbers = list(range(1,10001))
+ remove_list = []
+
+ for num in numbers:
+     for n in str(num):			  # 21같은 숫자를 문자열로 형변환하여 2와 1로 분해한 뒤 다시 int형변환하여 21 + 2 + 1 이런 식으로 계산한다.	
+         num += int(n)                    # 그렇게하여 나온 num의 값은 self number가 아니므로 remove_list에 추가한다.
+     if num <= 10000:
+         remove_list.append(num)
+
+ for remove_num in set(remove_list):  	  # 생성자가 여러 개 {예를 들어, 101의 생성자는 91과 100 두 개} 일 수 있으므로 
+     numbers.remove(remove_num)      	  # set 집합으로 중복된 원소들을 제거한다.
+ for self_num in numbers:
+     print(self_num)       
+     
+     
+     
+# ------------------------------------------------------------------------------------------
